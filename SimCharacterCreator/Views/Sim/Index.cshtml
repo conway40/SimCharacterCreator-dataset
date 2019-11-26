@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SimCharacterCreator.Models.Sim>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trait1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trait2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trait3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aspiration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageFileName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trait1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trait2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trait3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aspiration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageFileName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
