@@ -15,7 +15,8 @@ namespace SimCharacterCreator.Controllers
         // GET: Sim
         public ActionResult Index()
         {
-            return View(SeedData.GenerateListOfCharacters());
+            // velis
+            return View(_simBusiness.AllSims());
         }
 
         // GET: Sim/Details/5

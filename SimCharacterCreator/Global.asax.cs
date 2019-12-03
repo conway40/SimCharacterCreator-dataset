@@ -17,13 +17,12 @@ namespace SimCharacterCreator
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            OnSessionStart();
         }
-
-        void OnSessionStart()
-        {
-            var dataSet = SeedData.GenerateListOfCharacters();
-            HttpContext.Current.Session.Add("DataSet", dataSet);
-        }
+        
+        // velis - delete this
+        //void OnSessionStart()
+        //{
+        //    var dataSet = SeedData.GenerateListOfCharacters();
+        //}
     }
 }

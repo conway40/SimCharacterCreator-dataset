@@ -22,8 +22,11 @@ namespace SimCharacterCreator.BusinessLayer
         /// </summary>
         public SimRepository()
         {
-            _dataService = SetDataService();
-            _sims = _dataService.ReadAll() as List<Sim>;
+            //_dataService = SetDataService();
+            //_sims = _dataService.ReadAll() as List<Sim>;
+
+            // velis
+            _sims = SeedData.GenerateListOfCharacters();
         }
 
         /// <summary>
