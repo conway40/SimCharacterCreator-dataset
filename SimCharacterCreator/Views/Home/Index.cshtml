@@ -6,7 +6,7 @@
     <h1>Sim Character Creator</h1>
     <p class="lead">Sim Character Creator is a free web app for building amazing sims and viewing sims from other creators.</p>
     <p>Make an account and start creating sims now!</p>
-    <p><a href="~/Views/Account/Register.cshtml" class="btn btn-primary btn-lg">Register &raquo;</a></p>
+    <p>@Html.ActionLink("Register", "Register", "Account",  new { id = "registerLink" }, new {@class = "btn btn-default" })</p>
 </div>
 
 <div class="row">
@@ -22,12 +22,12 @@
         <h2>Need Inspiration?</h2>
         <h3>Explore our database of characters from other creators!</h3>
         <p>You can easily find a sim that offers the right mix of features and traits for your gaming experience.</p>
-        <p><a class="btn btn-default" href="#">Explore Sims &raquo;</a></p>
+        <p>@Html.ActionLink("Explore Sims", "Index", "Sim", null, new { @class = "btn btn-default"})</p>
     </div>
     <div class="col-md-4">
         <h2>Login</h2>
         <p>Login to start creating sims today!</p>
         <p>You can View, Change, or Delete sims that you've created.</p>
-        <p><a class="btn btn-default" href="~/Views/Account/Login.cshtml">Login &raquo;</a></p>
+        <p><a class="btn btn-default" href="~/Views/Account/Login">Login &raquo;</a></p>
     </div>
 </div>
