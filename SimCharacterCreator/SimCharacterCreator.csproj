@@ -265,6 +265,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Sim\Index.cshtml" />
+    <Content Include="Views\Sim\Details.cshtml" />
+    <Content Include="Views\Sim\Create.cshtml" />
+    <Content Include="Views\Sim\Delete.cshtml" />
+    <Content Include="Views\Sim\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,6 +305,8 @@
           <DevelopmentServerPort>64562</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44337/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:64562/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

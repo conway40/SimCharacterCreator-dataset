@@ -13,12 +13,14 @@ namespace SimCharacterCreator.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.LinkText = "Index";
             Session["DataSet"] = SeedData.GenerateListOfCharacters();
             return View();
         }
 
         public ActionResult About()
         {
+            ViewBag.LinkText = "About";
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -26,6 +28,7 @@ namespace SimCharacterCreator.Controllers
 
         public ActionResult Contact()
         {
+            ViewBag.LinkText = "Contact";
             ViewBag.Message = "Your contact page.";
 
             return View();

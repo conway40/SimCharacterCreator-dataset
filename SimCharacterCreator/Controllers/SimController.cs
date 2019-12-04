@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SimCharacterCreator.BusinessLayer;
 using SimCharacterCreator.DataAccessLayer;
+using SimCharacterCreator.Models;
 
 namespace SimCharacterCreator.Controllers
 {
@@ -15,6 +17,7 @@ namespace SimCharacterCreator.Controllers
         // GET: Sim
         public ActionResult Index()
         {
+            ViewBag.LinkText = "Sim";
             // velis
             return View(_simBusiness.AllSims());
         }
@@ -22,8 +25,18 @@ namespace SimCharacterCreator.Controllers
         // GET: Sim/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Sim sim = _simBusiness.SimById(id);
+            if (sim == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sim);
         }
+        
 
         // GET: Sim/Create
         public ActionResult Create()
@@ -33,62 +46,76 @@ namespace SimCharacterCreator.Controllers
 
         // POST: Sim/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Sim sim)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                _simBusiness.AddSim(sim);
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(sim);
             }
         }
 
         // GET: Sim/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Sim sim = _simBusiness.SimById(id);
+            if (sim == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sim);
         }
 
         // POST: Sim/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Sim sim)
         {
             try
             {
                 // TODO: Add update logic here
-
+                _simBusiness.DeleteSim(sim);
+                _simBusiness.AddSim(sim);
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(sim);
             }
         }
 
         // GET: Sim/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Sim sim = _simBusiness.SimById(id);
+            if (sim == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sim);
         }
 
         // POST: Sim/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Sim sim = _simBusiness.SimById(id);
+            _simBusiness.DeleteSim(sim);
+            return RedirectToAction("Index");
         }
     }
 }

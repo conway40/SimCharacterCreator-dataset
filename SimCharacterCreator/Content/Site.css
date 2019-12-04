@@ -1,7 +1,14 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 22px;
 }
+h1 {font-size:42px;}
+h2 {font-size: 38px;}
+h3 {font-size: 34px;}
+h4 {font-size: 30px;}
+.btn {font-size: 24px;}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -21,4 +28,31 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #32d435;
+}
+.navbar-inverse .navbar-nav > li.current >  a {
+    color: #32d439;
+    text-decoration: overline;
+}
+.navbar-inverse {
+    background-color: #039028;
+    border-bottom: 4px solid #1ed435;
+}
+
+a {
+    color: #1ed435;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.form-control {
+    font-size: 22px;
+    height: 40px;
 }

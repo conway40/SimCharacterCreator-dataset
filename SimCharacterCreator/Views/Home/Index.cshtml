@@ -28,6 +28,6 @@
         <h2>Login</h2>
         <p>Login to start creating sims today!</p>
         <p>You can View, Change, or Delete sims that you've created.</p>
-        <p><a class="btn btn-default" href="~/Views/Account/Login">Login &raquo;</a></p>
+        <p>@Html.ActionLink("Login", "Login", "Account", new { id = "loginLink" }, new { @class = "btn btn-default" })</p>
     </div>
 </div>
