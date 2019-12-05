@@ -22,11 +22,11 @@ namespace SimCharacterCreator.BusinessLayer
         /// </summary>
         public SimRepository()
         {
-            //_dataService = SetDataService();
-            //_sims = _dataService.ReadAll() as List<Sim>;
+            _dataService = SetDataService();
+            _sims = _dataService.ReadAll() as List<Sim>;
 
             // velis
-            _sims = SeedData.GenerateListOfCharacters();
+            //_sims = SeedData.GenerateListOfCharacters();
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace SimCharacterCreator.BusinessLayer
         {
             switch (DataConfig.dataType)
             {
-                //case DataType.XML:
+                //case SeedDataType.XML:
                     //return new DataServiceXml();
                     //break;
 
