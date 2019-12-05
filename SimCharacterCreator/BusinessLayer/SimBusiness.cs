@@ -93,6 +93,9 @@ namespace SimCharacterCreator.BusinessLayer
             {
                 try
                 {
+                    List<Sim> sims = SimsList();
+                    List<Sim> SortedList = sims.OrderBy(s => s.Id).ToList();
+                    sim.Id = SortedList.Last().Id + 1;
                     simRepository.Add(sim);
                     FileIoStatus = FileIoMessage.Complete;
                 }
