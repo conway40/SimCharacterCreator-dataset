@@ -198,6 +198,7 @@
     <Content Include="DataAccessLayer\Images\AngelaPleasant.png" />
     <Content Include="DataAccessLayer\Images\BellaGoth.png" />
     <Content Include="DataAccessLayer\Images\BobPancakes.png" />
+    <Content Include="DataAccessLayer\Images\default.png" />
     <Content Include="DataAccessLayer\Images\DennisKim.png" />
     <Content Include="DataAccessLayer\Images\DinaCaliente.png" />
     <Content Include="DataAccessLayer\Images\DonLothario.png" />
@@ -219,6 +220,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="DataAccessLayer\Capstone Data.xlsx" />
     <Content Include="DataAccessLayer\simdata.json" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
