@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Help";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+<h2>Creating a Sim</h2>
+<p>Head over to the home page and click the button that says "Create Sims", or follow this link: @Html.ActionLink("Create Sims", "Create", "Sim"). Here you can create a new sim! All values here are randomized, you just need to enter a name! Click inside the textbox next to "First Name" and enter a first name for your sim, and do the same for "Last Name". Now you can press the "Create" button, or continue to edit your sim!</p>
+<p>The "Age" dropdown will allow you to select an age for your sim, with values of Teen, Young Adult, Adult, and Elder. The "Gender" dropdown will allow you to select a gender for your sim, with values of Male, Female, and Other. The "Trait 1", "Trait 2", and "Trait 3" dropdowns will allow you to select three traits for your sim! There are many to choose from, so go ahead and take a look! The "Aspiration" dropdown will allow you to select an aspiration from a large selection of aspirations as well. The "Image File Name" textbox allows you to enter the file name that exists in our database. To start off with, leave the name as "default.png". As you look around at the other character's details, you can snag one of their Image File Names and use it in your future sim creations. Press the "Create" button to save your sim! You will now be directed to our Sim database - look through it to find your new sim!</p>
+<h2>Exploring Sims</h2>
+<p>Want to explore our expansive library of sims? You came to the right place! Look in the navigation bar at the top of the browser window and select the link that says "Sims", or follow this link: @Html.ActionLink("Explore Sims", "Index", "Sim"). Here you can view sims made by you and other creators.</p>
+<p>The table that you see shows information about our sims, including their image, First Name, Last Name, Age, and Gender. You can edit the sim by clicking the "Edit" link, view details about a sim by pressing the "Details" link, or delete a sim by clicking on the "Delete" link. You can also sort by First Name, Last Name, Age, and Gender by ascending or decending order just by clicking on their table header link. You will see an arrow next to the active sort: a down arrow is sorting by ascending order, while an up arrow is sorting by descending order. You can also search by First or Last Name by entering your search query into the "Search Name" textbox and clicking "Find". To clear your search, backspace your query until it is empty and click "Find" again.</p>
+<h2>Viewing Details of a Sim</h2>
+<p>While you are on the "@Html.ActionLink("Explore Sims", "Index", "Sim")" page, find a Sim that you would like to see details of and press the "Details" link next to that sim. This will take you to a Details page about that sim, where you can see all of the details about that sim. From here, you can go "Back to List" or click on the "Edit" link to edit the details about this sim.</p>
+<h2>Editing a Sim</h2>
+<p>While you are on the "@Html.ActionLink("Explore Sims", "Index", "Sim")" page, you can press the "Edit" button next to a sim to edit the sim, or click the "Edit" link while on the "Details" page. From the Edit page, you can edit anything you'd like about a sim. Just click inside of a textbox and start typing, or click on a dropdown and select a new item.</p>
+<h2>Deleting a Sim</h2>
+<p>While you are on the "@Html.ActionLink("Explore Sims", "Index", "Sim")" page, find a Sim that you would like to delete and press the "Delete" link next to that sim. This will take you to a Delete page for that sim, where you can see all of the details about that sim. You will be asked: "Are you sure you want to delete this sim?" From here, you can go "Back to List" or click on the "Delete" button to delete this sim. There is no undo button, so be sure that you want to delete a sim before you do so.</p>
+<h2>About the Application</h2>
+<p>If you'd like to read more about this application, head over to our @Html.ActionLink("About Page", "About", "Home").</p>
+<h2>Contact the Developer</h2>
+<p>If you'd like to contact the develper of this application, head over to our @Html.ActionLink("Contact Page", "Contact", "Home").</p>

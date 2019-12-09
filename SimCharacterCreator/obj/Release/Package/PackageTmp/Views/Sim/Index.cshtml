@@ -1,55 +1,69 @@
 ﻿@model IEnumerable<SimCharacterCreator.Models.Sim>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Explore Sims";
 }
 
-<h2>Index</h2>
+<h2>Explore Sims</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Search Name: @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+        <input type="submit" value="Find" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th></th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.ActionLink("First Name", "Index", new { Sorting_Order = ViewBag.SortingFirstName })  @Html.Raw(@ViewBag.SortedFirstName)
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.ActionLink("Last Name", "Index", new { Sorting_Order = ViewBag.SortingLastName }) @Html.Raw(@ViewBag.SortedLastName)
+            @*@Html.DisplayNameFor(model => model.LastName)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.ActionLink("Age", "Index", new { Sorting_Order = ViewBag.SortingAge }) @Html.Raw(@ViewBag.SortedAge)
+            @*@Html.DisplayNameFor(model => model.Age)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Gender)
+            @Html.ActionLink("Gender", "Index", new { Sorting_Order = ViewBag.SortingGender }) @Html.Raw(@ViewBag.SortedGender)
+            @*@Html.DisplayNameFor(model => model.Gender)*@
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        <img width="100px" src="~/DataAccessLayer/Images/@Html.DisplayFor(modelItem => item.ImageFileName)" />
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FirstName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Age)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Gender)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img width="100px" src="~/DataAccessLayer/Images/@Html.DisplayFor(modelItem => item.ImageFileName)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

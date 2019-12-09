@@ -211,6 +211,9 @@
     <Content Include="DataAccessLayer\Images\MortimerGoth.png" />
     <Content Include="DataAccessLayer\Images\NancyLandgraab.png" />
     <Content Include="DataAccessLayer\Images\NinaCaliente.png" />
+    <Content Include="DataAccessLayer\Images\TheGothFamily.jpg" />
+    <Content Include="DataAccessLayer\Images\ThePancakeFamily.jpg" />
+    <Content Include="DataAccessLayer\Images\ThePleasantFamily.jpg" />
     <Content Include="DataAccessLayer\Images\VivianLewis.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -271,6 +274,7 @@
     <Content Include="Views\Sim\Create.cshtml" />
     <Content Include="Views\Sim\Delete.cshtml" />
     <Content Include="Views\Sim\Edit.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,14 +14,13 @@ namespace SimCharacterCreator.Controllers
         public ActionResult Index()
         {
             ViewBag.LinkText = "Index";
-            Session["DataSet"] = SeedData.GenerateListOfCharacters();
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.LinkText = "About";
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About the Sims Character Creator";
 
             return View();
         }
@@ -29,8 +28,14 @@ namespace SimCharacterCreator.Controllers
         public ActionResult Contact()
         {
             ViewBag.LinkText = "Contact";
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact the developer";
 
+            return View();
+        }
+        public ActionResult Help()
+        {
+            ViewBag.LinkText = "Help";
+            ViewBag.Message = "Need help using this application? Start Here!";
             return View();
         }
     }

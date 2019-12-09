@@ -7,6 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -25,9 +26,12 @@
                     <li class="@(ViewBag.Linktext == "About" ? "current" : "")">@Html.ActionLink("About", "About", "Home")</li>
                     <li class="@(ViewBag.Linktext == "Contact" ? "current" : "")">@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li class="@(ViewBag.Linktext == "Sim" ? "current" : "")">@Html.ActionLink("Sims", "Index", "Sim")</li>
-                    
+
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="@(ViewBag.Linktext == "Help" ? "current" : "")">@Html.ActionLink("Help", "Help", "Home")</li>
+                </ul>
             </div>
         </div>
     </div>
